@@ -1,4 +1,5 @@
 #![cfg_attr(not(feature = "program"), allow(unused))]
+use borsh::BorshDeserialize;
 use num_enum::TryFromPrimitive;
 use std::{
     cell::RefMut, convert::identity, convert::TryInto, mem::size_of, num::NonZeroU64, ops::Deref,
@@ -582,7 +583,7 @@ impl MarketState {
 }
 
 #[repr(packed)]
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, BorshDeserialize, Debug)]
 #[cfg_attr(feature = "fuzz", derive(Debug))]
 pub struct OpenOrders {
     pub account_flags: u64, // Initialized, OpenOrders
