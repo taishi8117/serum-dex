@@ -3163,6 +3163,7 @@ version = "0.5.6"
 dependencies = [
  "arrayref",
  "bincode",
+ "borsh",
  "bytemuck",
  "byteorder",
  "enumflags2",
